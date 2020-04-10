@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en" ng-app="myApp">
+
+
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="data: https://api.kawalcorona.com/">
+    <meta name="author" content="aryo tejo w , 0852 28129 375">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Data Corona dengan Angularjs php mysql</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/album.css" rel="stylesheet">
+    <link href="css/glyphicons.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    
+  </head>
+
+  <body ng-controller="MukaCtrl">
+
+    <header>
+     
+    </header>
+
+    <main role="main">
+
+  
+        <div class="container" id="dataPropinsi">
+
+          <h1 class="jumbotron-heading">Data Update Covid-19</h1>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                  <th>Positif</th>
+                  <th>Sembuh</th>
+                  <th>Meninggal</th>
+              </tr>
+            </thead>
+           <tr ng-repeat="n in nasional  ">  
+              <td>{{n.positif}}</td>
+              <td>{{n.sembuh}}</td>
+              <td>{{n.meninggal}}</td>
+           </tr>
+            </table>
+
+            <table class="table table-striped" >
+                    <tr>
+                       
+                        <th>Propinsi</th>
+                        <th>Positif</th>
+                        <th>Sembuh</th>
+                        <th>Meninggal</th>
+                        
+                        
+                    </tr>
+          
+                  <!--  <tr ng-repeat="pr in mypropinsi  track by $index "> -->
+                    <tr ng-repeat="pr in mypropinsi | orderBy:'pr.attributes.Provinsi' ">  
+                      
+                        <td>{{pr.attributes.Provinsi}}</td>
+                        <td>{{pr.attributes.Kasus_Posi}}</td>
+                        <td>{{pr.attributes.Kasus_Semb}}</td>
+                        <td>{{pr.attributes.Kasus_Meni}}</td>
+                         
+                        <!--   // ini proven
+                        <td>{{pr.kode_barang}}</td>
+                        <td>{{pr.nama_barang}}</td>
+                        <td>{{pr.harga_beli}}</td>
+                        <td>{{pr.harga_jual}}</td>
+                         --> 
+                       
+                        
+                    </tr>
+                   
+                </table> <!-- wadahtabel  -->
+
+
+            
+   
+        </div>
+
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+
+
+           
+            
+            
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+     -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="app/app.js">  </script>
+  </body>
+</html>
